@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use("/api/plans", planRoutes);
 app.use('/api/exercises', exerciseRoutes)
-app.use('/api/exercises', muscleRoutes)
+app.use('/api/muscles', muscleRoutes)
 
 
 const connection_string = process.env.CONNECT_STRING;
