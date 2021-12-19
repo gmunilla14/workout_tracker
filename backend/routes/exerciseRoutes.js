@@ -16,18 +16,20 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const schema = Joi.object({
-    name: Joi.string().required(),
-    muscleIDs: Joi.array().items(Joi.number()).required(),
+    name: Joi.string().required().min(1).max(200),
+    muscleIDs: Joi.array().items(Joi.string()).required(),
+    notes: Joi.string().max(1000)
   }).options({ abortEarly: false });
 
   const { error } = schema.validate(req.body);
   if (error) return res.status(500).send(error.details[0].message);
 
-  const { name, muscleIDs } = req.body;
+  const { name, muscleIDs, notes } = req.body;
 
   let exercise = new Exercise({
     name,
     muscleIDs,
+    notes
   });
 
   try {

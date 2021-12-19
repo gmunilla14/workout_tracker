@@ -6,6 +6,7 @@ const exerciseSchema = new mongoose.Schema({
     required: true,
   },
   muscleIDs: [String],
+  notes: String
 });
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
