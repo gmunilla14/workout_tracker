@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
     creatorID: Joi.string().required(),
     sets: Joi.array().items(
       Joi.object({
-        number: Joi.number().required(),
         type: Joi.string().required(),
         plannedWeight: Joi.number(),
         plannedReps: Joi.number(),

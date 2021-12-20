@@ -13,7 +13,6 @@ const planSchema = new mongoose.Schema({
   },
   sets: [
     {
-      number: { type: Number, required: true },
       type: { type: String, required: true },
       plannedWeight: Number,
       plannedReps: Number,
