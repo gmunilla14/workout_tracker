@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const planRoutes = require("./routes/planRoutes");
 const exerciseRoutes = require('./routes/exerciseRoutes')
 const muscleRoutes = require('./routes/muscleRoutes')
+const workoutRoutes = require('./routes/workoutRoutes')
 dotenv.config();
 
 const app = express();
@@ -15,6 +16,8 @@ app.use(express.json());
 app.use("/api/plans", planRoutes);
 app.use('/api/exercises', exerciseRoutes)
 app.use('/api/muscles', muscleRoutes)
+app.use('/api/workouts', workoutRoutes)
+
 
 
 const connection_string = process.env.CONNECT_STRING;
