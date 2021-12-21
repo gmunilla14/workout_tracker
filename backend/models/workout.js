@@ -10,12 +10,6 @@ const workoutSchema = new mongoose.Schema({
     endTime: Number,
     sets: [
         {
-            number: {
-                type: Number,
-                required: true,
-                min: 0,
-                max: 100
-            },
             type: {
                 type: String, 
                 maxlength: 50,

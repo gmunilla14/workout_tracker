@@ -21,7 +21,6 @@ router.post("/", async (req, res) => {
     endTime: Joi.number(),
     sets: Joi.array().items(
       Joi.object({
-        number: Joi.number().required().min(0).max(100),
         type: Joi.string().required(),
         startTime: Joi.number(),
         endTime: Joi.number(),
